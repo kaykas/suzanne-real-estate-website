@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suzanne Z Kaykas | Oregon Real Estate Expert Since 1991</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-rust: #0F172A;
+            --color-cream: #FFFFFF;
+            --color-text-dark: #0F172A;
+            --color-accent-blue: #2563EB;
+            --color-cta-yellow: #FBBF24;
+            --color-white: #FFFFFF;
+
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+
+            --font-display: 'Anton', sans-serif;
+            --font-serif: 'DM Serif Display', serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--color-rust);
+            color: var(--color-cream);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .text-cream { color: var(--color-cream); }
+        .text-rust { color: var(--color-rust); }
+        .text-dark { color: var(--color-text-dark); }
+        .text-blue { color: var(--color-accent-blue); }
+
+        h1, h2, h3 {
+            line-height: 0.9;
+            text-transform: uppercase;
+        }
+
+        .display-xl {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 8rem);
+            letter-spacing: 1px;
+            text-shadow: 4px 4px 0px rgba(0,0,0,0.4);
+        }
+
+        .display-lg {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 4rem);
+        }
+
+        .serif-title {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            text-transform: none;
+            line-height: 1.1;
+        }
+
+        .serif-subtitle {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            text-transform: none;
+        }
+
+        .btn-primary {
+            background-color: var(--color-cta-yellow);
+            color: var(--color-text-dark);
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            padding: 16px 48px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            background-color: var(--color-white);
+        }
+
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            padding-top: 120px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-blob {
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 70vw;
+            height: 110vh;
+            background: var(--color-cream);
+            border-radius: 0% 100% 0% 100% / 0% 100% 0% 100%;
+            z-index: 0;
+            transform: rotate(0deg);
+        }
+
+        .nav-bar {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            border: 2px solid var(--color-cream);
+            padding: 4px 12px;
+            border-radius: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-circle {
+            width: 12px;
+            height: 12px;
+            background: var(--color-accent-blue);
+            border-radius: 0%;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            .image-circle-container {
+                order: -1;
+            }
+        }
+
+        .hero-text-block h1 span {
+            display: block;
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            max-width: 400px;
+            margin: 24px 0 40px 0;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .image-circle-container {
+            position: relative;
+            width: min(500px, 90vw);
+            height: min(500px, 90vw);
+            margin: 0 auto;
+        }
+
+        .image-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 12px solid var(--color-accent-blue);
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.5);
+            position: relative;
+            background: #222;
+        }
+
+        .image-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%) contrast(110%);
+        }
+
+        .floating-deco {
+            position: absolute;
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .deco-leaf {
+            width: 60px;
+            height: 60px;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L100 50 L50 100 L0 50 Z' fill='%23FBBF24' /%3E%3C/svg%3E");
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .experience-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .stat-box {
+            background: var(--color-white);
+            border-radius: 0px;
+            padding: 40px;
+            box-shadow: 15px 15px 0px var(--color-accent-blue);
+            transform: rotate(0deg);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: scale(1.02);
+            box-shadow: 20px 20px 0px var(--color-cta-yellow);
+        }
+
+        .stat-box h3 {
+            font-family: var(--font-display);
+            color: var(--color-text-dark);
+            font-size: 3rem;
+            margin-bottom: 8px;
+        }
+
+        .stat-box p {
+            color: var(--color-text-dark);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .testimonial-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .bio-badge {
+            display: inline-block;
+            background: var(--color-cta-yellow);
+            color: var(--color-text-dark);
+            padding: 8px 24px;
+            border-radius: 0px;
+            margin-bottom: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: var(--color-white);
+            color: var(--color-text-dark);
+            padding: 40px 30px;
+            border-radius: 0px;
+            text-align: left;
+            position: relative;
+            border-left: 8px solid var(--color-accent-blue);
+        }
+
+        .testimonial-card:nth-child(2) {
+            border-left-color: var(--color-cta-yellow);
+        }
+
+        .testimonial-quote {
+            font-size: 4rem;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            opacity: 0.1;
+            font-family: var(--font-serif);
+        }
+
+        .testimonial-text {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-author {
+            display: block;
+            font-family: var(--font-display);
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            padding: 60px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 80px;
+            background: #000;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .contact-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .loop-deco {
+            position: absolute;
+            top: 20%;
+            left: -5%;
+            width: 150px;
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+
+        @media (max-width: 768px) {
+            .display-xl {
+                font-size: 3rem;
+            }
+            .display-lg {
+                font-size: 2rem;
+            }
+            .btn-primary {
+                font-size: 1rem;
+                padding: 12px 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container nav-bar">
+        <div class="nav-content">
+            <div class="logo">
+                <div class="logo-circle"></div>
+                SUZANNE<span style="font-weight:300">KAYKAS</span>
+            </div>
+            <a href="#contact" class="btn-primary" style="font-size: 1rem; padding: 10px 24px;">Get In Touch</a>
+        </div>
+    </nav>
+
+    <svg class="loop-deco" viewBox="0 0 200 100">
+        <path d="M10,50 L50,10 L100,50 L150,10 L190,50" fill="none" stroke="#FBBF24" stroke-width="3" stroke-dasharray="0" stroke-linecap="square"></path>
+        <path d="M180,40 L190,50 L180,60" fill="none" stroke="#FBBF24" stroke-width="3" stroke-linecap="square"></path>
+    </svg>
+
+    <header class="hero">
+        <div class="hero-blob"></div>
+
+        <div class="container hero-grid">
+            <div class="hero-text-block">
+                <h1 class="display-xl">
+                    <span>YOUR HOME</span>
+                    <span style="color: var(--color-accent-blue)">YOUR FUTURE</span>
+                </h1>
+                <p class="hero-sub text-cream">
+                    Since 1991, helping Oregon families find their perfect home.
+                    Not just a broker, but your trusted partner in the Valley.
+                </p>
+                <div style="position: relative; display: inline-block;">
+                    <a href="#listings" class="btn-primary">View Properties</a>
+
+                    <svg style="position: absolute; right: -80px; top: 10px; width: 60px; height: 40px; transform: rotate(0deg);" viewBox="0 0 100 60">
+                         <path d="M0,30 L90,30" fill="none" stroke="#FBBF24" stroke-width="3" stroke-dasharray="8 4"></path>
+                         <path d="M80,20 L90,30 L80,40" fill="none" stroke="#FBBF24" stroke-width="3"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="image-circle-container">
+                <div class="image-circle">
+                    <img src="wp-content/uploads/2018/06/suzanne-headshot.png" alt="Suzanne Z Kaykas">
+                </div>
+
+                <div class="floating-deco deco-leaf" style="top: -20px; left: 40px;"></div>
+                <div class="floating-deco deco-leaf" style="bottom: 40px; right: -20px; transform: scale(0.7) rotate(90deg); animation-delay: 1s;"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="experience-section">
+        <div class="container">
+            <div class="experience-grid">
+                <div>
+                    <h2 class="display-lg text-cream" style="margin-bottom: 24px;">30+ YEARS<br>OF LOCAL EXPERTISE</h2>
+                    <p class="serif-subtitle text-cream" style="opacity: 0.9; margin-bottom: 32px; line-height: 1.6;">
+                        "I love this beautiful area and the people in it. I look forward to working with you!"
+                        <br><br>
+                        Professional real estate services with a personal touch. Licensed Oregon broker specializing in residential, commercial, and investment properties.
+                    </p>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 30px;">
+                    <div class="stat-box">
+                        <h3>1991</h3>
+                        <p>SERVING OREGON SINCE</p>
+                    </div>
+                    <div class="stat-box" style="transform: translateX(40px);">
+                        <h3>100%</h3>
+                        <p>DEDICATED TO YOUR SUCCESS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <div style="position: absolute; left: -10%; top: 50%; width: 40%; height: 600px; background: var(--color-accent-blue); opacity: 0.2; border-radius: 0%; z-index: 0; filter: blur(80px);"></div>
+
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="bio-badge">What Clients Say</div>
+            <h2 class="display-lg text-cream" style="margin-bottom: 20px;">TRUSTED RELATIONSHIPS</h2>
+            <p class="serif-subtitle text-cream" style="opacity: 0.8; max-width: 600px; margin: 0 auto;">
+                Building lasting connections through honest service and local expertise
+            </p>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        Suzanne's knowledge of the Oregon market is exceptional. She guided us through every step with patience and expertise.
+                    </p>
+                    <strong class="testimonial-author">— THE MARTINEZ FAMILY</strong>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        Professional, responsive, and truly cares about finding the right fit. We couldn't have asked for a better broker.
+                    </p>
+                    <strong class="testimonial-author">— DAVID & SUSAN R.</strong>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        30 years of experience shows in every detail. Suzanne made selling our home smooth and stress-free.
+                    </p>
+                    <strong class="testimonial-author">— THE JOHNSONS</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="container footer-content">
+            <div>
+                <h2 class="display-lg">Ready to Find Home?</h2>
+                <div class="contact-pill">
+                    <span style="color: var(--color-accent-blue)">CONTACT SUZANNE</span>
+                </div>
+            </div>
+
+            <a href="contact/index.html" class="btn-primary">Get Started</a>
+        </div>
+        <div class="container" style="margin-top: 40px; text-align: center; opacity: 0.5; font-size: 0.8rem;">
+            © 2024 Suzanne Z Kaykas-Canterbury Real Estate LLC. Licensed Oregon Broker. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
