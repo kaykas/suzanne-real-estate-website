@@ -1,0 +1,31 @@
+(function($) {
+
+	$(document).ready(function() {
+
+		initRealtorSearch();
+	});
+
+
+	/**
+	 * Get the functionality working to have the search go to realtor.com
+	 *
+	 * @return void.
+	 */
+	function initRealtorSearch() {
+
+		$('#properties-search-form').submit(function(e) {
+			e.preventDefault();
+
+			var searchTerm = $('#properties-search-form [name="q"]').val().replace(new RegExp(' ', 'g'), '_').replace(new RegExp(',', 'g'), '');
+			var base = 'https://realtor.com/realestateandhomes-search/';
+			var urlToPost = base + searchTerm;
+
+			console.log(urlToPost);
+
+			// Open in a new tab.
+			window.open( urlToPost, '_blank' );
+		});
+	}
+
+
+})(jQuery)
