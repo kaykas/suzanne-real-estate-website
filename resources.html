@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Resources | Suzanne Z Kaykas Real Estate</title>
+    <meta name="description" content="Discover Eugene and Springfield area resources - schools, parks, entertainment, and community events. Your guide to living in the Willamette Valley.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-oregon-green: #154733;
+            --color-duck-yellow: #FEE123;
+            --color-dark-bg: #0A0A0A;
+            --color-cream: #FFFFFF;
+            --color-text-dark: #0F172A;
+            --container-width: 1200px;
+            --font-display: 'Anton', sans-serif;
+            --font-serif: 'DM Serif Display', serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--color-dark-bg);
+            color: var(--color-cream);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(254, 225, 35, 0.2);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-cream);
+            text-decoration: none;
+            border: 2px solid var(--color-oregon-green);
+            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .logo:hover {
+            border-color: var(--color-duck-yellow);
+            transform: translateY(-2px);
+        }
+
+        .logo-square {
+            width: 12px;
+            height: 12px;
+            background: var(--color-duck-yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-cream);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-duck-yellow);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 180px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .display-xl {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 4px 4px 0px rgba(0,0,0,0.6);
+            margin-bottom: 24px;
+        }
+
+        .page-subtitle {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Resources Grid */
+        .resources-section {
+            padding: 80px 0;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .resource-category {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-left: 6px solid var(--color-duck-yellow);
+            transition: all 0.3s;
+        }
+
+        .resource-category:nth-child(even) {
+            border-left-color: var(--color-oregon-green);
+        }
+
+        .resource-category:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(10px);
+        }
+
+        .resource-category h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-duck-yellow);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .resource-category:nth-child(even) h3 {
+            color: var(--color-oregon-green);
+        }
+
+        .resource-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .resource-links li {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .resource-links li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 12px;
+            height: 12px;
+            background: var(--color-duck-yellow);
+            transform: rotate(45deg);
+        }
+
+        .resource-links a {
+            color: var(--color-cream);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .resource-links a:hover {
+            color: var(--color-duck-yellow);
+        }
+
+        /* Info Box */
+        .info-box {
+            background: var(--color-cream);
+            color: var(--color-text-dark);
+            padding: 50px 40px;
+            box-shadow: 15px 15px 0px var(--color-oregon-green);
+            border-left: 8px solid var(--color-duck-yellow);
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .info-box h3 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-oregon-green);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .info-box p {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 80px 0 40px;
+            background: #000;
+            border-top: 1px solid rgba(254, 225, 35, 0.2);
+            margin-top: 100px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-duck-yellow);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .footer p, .footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--color-duck-yellow);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 968px) {
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="container nav-bar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <div class="logo-square"></div>
+                SUZANNE Z KAYKAS
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display-xl">
+                <span style="color: var(--color-cream);">COMMUNITY</span><br>
+                <span style="color: var(--color-duck-yellow);">RESOURCES</span>
+            </h1>
+            <p class="page-subtitle">
+                Discover the wonderful opportunities and community events in the greater Eugene and Springfield area
+            </p>
+        </div>
+    </header>
+
+    <!-- Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="resources-grid">
+                <!-- Education -->
+                <div class="resource-category">
+                    <h3>Education</h3>
+                    <ul class="resource-links">
+                        <li><a href="https://www.4j.lane.edu" target="_blank" rel="noopener">4J School District</a></li>
+                        <li><a href="http://www.bethel.k12.or.us" target="_blank" rel="noopener">Bethel School District</a></li>
+                        <li><a href="https://www.uoregon.edu" target="_blank" rel="noopener">University of Oregon</a></li>
+                        <li><a href="https://www.lanecc.edu" target="_blank" rel="noopener">Lane Community College</a></li>
+                    </ul>
+                </div>
+
+                <!-- Business & Commerce -->
+                <div class="resource-category">
+                    <h3>Business</h3>
+                    <ul class="resource-links">
+                        <li><a href="http://www.eugenechamber.com" target="_blank" rel="noopener">Eugene Chamber of Commerce</a></li>
+                        <li><a href="http://www.springfield-chamber.org" target="_blank" rel="noopener">Springfield Chamber of Commerce</a></li>
+                    </ul>
+                </div>
+
+                <!-- Arts & Culture -->
+                <div class="resource-category">
+                    <h3>Arts & Culture</h3>
+                    <ul class="resource-links">
+                        <li><a href="https://eugeneballet.org" target="_blank" rel="noopener">Eugene Ballet</a></li>
+                        <li><a href="http://www.hultcenter.org" target="_blank" rel="noopener">Hult Center For Performing Arts</a></li>
+                        <li><a href="https://www.matthewknightarena.com" target="_blank" rel="noopener">Matt Knight Arena</a></li>
+                        <li><a href="https://www.eugeneopera.org" target="_blank" rel="noopener">Eugene Opera</a></li>
+                    </ul>
+                </div>
+
+                <!-- Parks & Recreation -->
+                <div class="resource-category">
+                    <h3>Parks & Recreation</h3>
+                    <ul class="resource-links">
+                        <li><a href="https://www.eugene-or.gov/132/Rec-Guide" target="_blank" rel="noopener">Eugene Parks and Recreation</a></li>
+                        <li><a href="https://willamalane.org" target="_blank" rel="noopener">Springfield Parks and Recreation</a></li>
+                        <li><a href="https://www.eugene-or.gov/489/Bike" target="_blank" rel="noopener">Eugene Bike Paths</a></li>
+                        <li><a href="https://www.eugene-or.gov/1357/Outdoor-Programs" target="_blank" rel="noopener">Outdoor Programs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sports & Athletics -->
+                <div class="resource-category">
+                    <h3>Sports</h3>
+                    <ul class="resource-links">
+                        <li><a href="https://goducks.com" target="_blank" rel="noopener">Oregon Ducks Athletics</a></li>
+                        <li><a href="https://www.matthewknightarena.com" target="_blank" rel="noopener">Matt Knight Arena</a></li>
+                        <li><a href="https://goducks.com/sports/football" target="_blank" rel="noopener">Autzen Stadium</a></li>
+                    </ul>
+                </div>
+
+                <!-- City Services -->
+                <div class="resource-category">
+                    <h3>City Services</h3>
+                    <ul class="resource-links">
+                        <li><a href="https://www.eugene-or.gov" target="_blank" rel="noopener">City of Eugene</a></li>
+                        <li><a href="https://www.springfield-or.gov" target="_blank" rel="noopener">City of Springfield</a></li>
+                        <li><a href="https://www.ltd.org" target="_blank" rel="noopener">Lane Transit District</a></li>
+                        <li><a href="https://www.eugene-or.gov/169/Library" target="_blank" rel="noopener">Eugene Public Library</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>Love Living in Eugene</h3>
+                <p>
+                    The Eugene-Springfield metro area offers an exceptional quality of life with beautiful outdoor spaces, vibrant arts and culture, excellent schools, and a strong sense of community. Whether you're relocating or already call this place home, these resources will help you make the most of everything our region has to offer.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Suzanne Z Kaykas</h3>
+                    <p>Principal Broker / Owner</p>
+                    <p>Licensed in the State of Oregon</p>
+                    <p style="margin-top: 20px;">Suzanne Z Kaykas-Canterbury Real Estate LLC</p>
+                </div>
+
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.oregon.gov/rea/licensing/Documents/Initial-Agency-Disclosure-Pamphlet.pdf" target="_blank">Initial Agency Disclosure</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="resources.html">Community Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 Suzanne Z Kaykas-Canterbury Real Estate LLC. Licensed Oregon Broker. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

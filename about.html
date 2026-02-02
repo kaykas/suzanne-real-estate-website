@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Suzanne Z Kaykas | Oregon Real Estate Broker Since 1991</title>
+    <meta name="description" content="Meet Suzanne Z Kaykas - Principal Broker with 30+ years of Oregon real estate experience. Licensed broker, former mortgage originator, and Eugene community advocate.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-oregon-green: #154733;
+            --color-duck-yellow: #FEE123;
+            --color-dark-bg: #0A0A0A;
+            --color-cream: #FFFFFF;
+            --color-text-dark: #0F172A;
+            --container-width: 1200px;
+            --font-display: 'Anton', sans-serif;
+            --font-serif: 'DM Serif Display', serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--color-dark-bg);
+            color: var(--color-cream);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(254, 225, 35, 0.2);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-cream);
+            text-decoration: none;
+            border: 2px solid var(--color-oregon-green);
+            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .logo:hover {
+            border-color: var(--color-duck-yellow);
+            transform: translateY(-2px);
+        }
+
+        .logo-square {
+            width: 12px;
+            height: 12px;
+            background: var(--color-duck-yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-cream);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-duck-yellow);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 180px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(21, 71, 51, 0.2) 0%, transparent 70%);
+        }
+
+        .display-xl {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 4px 4px 0px rgba(0,0,0,0.6);
+            margin-bottom: 24px;
+        }
+
+        .page-subtitle {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .bio-image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 50%;
+            border: 12px solid var(--color-oregon-green);
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.7), 0 0 0 2px var(--color-duck-yellow);
+        }
+
+        .display-lg {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
+
+        .serif-text {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+
+        .credentials-box {
+            background: var(--color-cream);
+            color: var(--color-text-dark);
+            padding: 40px;
+            box-shadow: 15px 15px 0px var(--color-oregon-green);
+            border-left: 8px solid var(--color-duck-yellow);
+            margin-top: 40px;
+        }
+
+        .credentials-box h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-oregon-green);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .credentials-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .credentials-box li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(21, 71, 51, 0.2);
+            font-size: 1.1rem;
+        }
+
+        .credentials-box li:last-child {
+            border-bottom: none;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 50px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--color-duck-yellow);
+            transform: rotate(45deg);
+        }
+
+        .timeline-item h4 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-duck-yellow);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .timeline-item p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0.85;
+        }
+
+        .btn-primary {
+            background-color: var(--color-duck-yellow);
+            color: var(--color-text-dark);
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            padding: 18px 48px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 20px rgba(254, 225, 35, 0.4);
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(254, 225, 35, 0.6);
+            background-color: var(--color-cream);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 80px 0 40px;
+            background: #000;
+            border-top: 1px solid rgba(254, 225, 35, 0.2);
+            margin-top: 100px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-duck-yellow);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .footer p, .footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--color-duck-yellow);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 968px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="container nav-bar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <div class="logo-square"></div>
+                SUZANNE Z KAYKAS
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display-xl">
+                <span style="color: var(--color-cream);">MEET</span>
+                <span style="color: var(--color-duck-yellow);">SUZANNE</span>
+            </h1>
+            <p class="page-subtitle">
+                30+ years of Oregon real estate expertise, serving Eugene and the Willamette Valley with dedication and integrity
+            </p>
+        </div>
+    </header>
+
+    <!-- Bio Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div>
+                    <img src="suzanne-headshot-optimized.png" alt="Suzanne Z Kaykas" class="bio-image">
+                </div>
+
+                <div>
+                    <h2 class="display-lg">
+                        <span style="color: var(--color-cream);">YOUR</span><br>
+                        <span style="color: var(--color-duck-yellow);">TRUSTED PARTNER</span>
+                    </h2>
+
+                    <p class="serif-text">
+                        "I love this beautiful area and the people in it. I look forward to working with you!"
+                    </p>
+
+                    <p class="serif-text">
+                        Since 1991, I've been helping Oregon families achieve their real estate dreams. Whether you're buying your first home, selling a cherished property, or building a real estate investment portfolio, I bring over three decades of local expertise and unwavering commitment to your success.
+                    </p>
+
+                    <p class="serif-text">
+                        Real estate is more than transactions—it's about relationships, trust, and understanding the unique needs of each client. My approach combines deep market knowledge with personalized service that puts your goals first.
+                    </p>
+                </div>
+            </div>
+
+            <div class="credentials-box">
+                <h3>Credentials & Experience</h3>
+                <ul>
+                    <li><strong>Oregon Licensed Broker</strong> - Principal Broker / Owner</li>
+                    <li><strong>Real Estate Services Since 1991</strong> - 30+ years of local expertise</li>
+                    <li><strong>Former Oregon Licensed Mortgage Loan Originator</strong> - 2001-2014</li>
+                    <li><strong>Independent Local Entertainment Promoter</strong> - 1978-2001</li>
+                    <li><strong>Specializations:</strong> Residential, Commercial, Investment Properties</li>
+                    <li><strong>Service Areas:</strong> Eugene, Springfield, Veneta, Florence, Willamette Valley</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="content-section" style="background: linear-gradient(180deg, var(--color-dark-bg) 0%, #1a1a1a 100%);">
+        <div class="container">
+            <h2 class="display-lg" style="text-align: center; margin-bottom: 80px;">
+                <span style="color: var(--color-cream);">MY</span>
+                <span style="color: var(--color-duck-yellow);"> JOURNEY</span>
+            </h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>1991 - Present: Real Estate Broker</h4>
+                    <p>
+                        Started my real estate career in Eugene, building a reputation for honesty, expertise, and results. Over 30 years of helping families buy and sell homes, navigate complex transactions, and achieve their property goals.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>2001-2014: Mortgage Loan Originator</h4>
+                    <p>
+                        Expanded my expertise by becoming an Oregon Licensed Mortgage Loan Originator, providing clients with comprehensive financial guidance and streamlined home buying experiences.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>1978-2001: Entertainment Promoter</h4>
+                    <p>
+                        Before real estate, I was an independent local entertainment promoter in Eugene, building strong community connections and learning the art of negotiation and relationship management.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>Today: Trusted Community Leader</h4>
+                    <p>
+                        Continuing to serve the Eugene and Willamette Valley communities with passion, expertise, and commitment. Every client receives personalized attention and the benefit of decades of local market knowledge.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="content-section" style="text-align: center; padding: 100px 0;">
+        <div class="container">
+            <h2 class="display-lg" style="margin-bottom: 40px;">
+                <span style="color: var(--color-cream);">READY TO WORK</span><br>
+                <span style="color: var(--color-duck-yellow);">TOGETHER?</span>
+            </h2>
+            <p class="page-subtitle" style="margin-bottom: 50px;">
+                Let's discuss your real estate goals and create a plan for success.
+            </p>
+            <a href="contact.html" class="btn-primary">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Suzanne Z Kaykas</h3>
+                    <p>Principal Broker / Owner</p>
+                    <p>Licensed in the State of Oregon</p>
+                    <p style="margin-top: 20px;">Suzanne Z Kaykas-Canterbury Real Estate LLC</p>
+                </div>
+
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.oregon.gov/rea/licensing/Documents/Initial-Agency-Disclosure-Pamphlet.pdf" target="_blank">Initial Agency Disclosure</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="resources.html">Community Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 Suzanne Z Kaykas-Canterbury Real Estate LLC. Licensed Oregon Broker. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

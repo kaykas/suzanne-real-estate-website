@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Suzanne Z Kaykas | Eugene Oregon Real Estate Broker</title>
+    <meta name="description" content="Contact Suzanne Z Kaykas for Oregon real estate services. Licensed broker serving Eugene, Springfield, and the Willamette Valley since 1991.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-oregon-green: #154733;
+            --color-duck-yellow: #FEE123;
+            --color-dark-bg: #0A0A0A;
+            --color-cream: #FFFFFF;
+            --color-text-dark: #0F172A;
+            --container-width: 1200px;
+            --font-display: 'Anton', sans-serif;
+            --font-serif: 'DM Serif Display', serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--color-dark-bg);
+            color: var(--color-cream);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(254, 225, 35, 0.2);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-cream);
+            text-decoration: none;
+            border: 2px solid var(--color-oregon-green);
+            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .logo:hover {
+            border-color: var(--color-duck-yellow);
+            transform: translateY(-2px);
+        }
+
+        .logo-square {
+            width: 12px;
+            height: 12px;
+            background: var(--color-duck-yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-cream);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-duck-yellow);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 180px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .display-xl {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 4px 4px 0px rgba(0,0,0,0.6);
+            margin-bottom: 24px;
+        }
+
+        .page-subtitle {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            padding: 80px 0;
+            align-items: start;
+        }
+
+        .contact-info-box {
+            background: var(--color-cream);
+            color: var(--color-text-dark);
+            padding: 50px 40px;
+            box-shadow: 15px 15px 0px var(--color-oregon-green);
+            border-left: 8px solid var(--color-duck-yellow);
+        }
+
+        .contact-info-box h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--color-oregon-green);
+            margin-bottom: 32px;
+            text-transform: uppercase;
+        }
+
+        .contact-item {
+            margin-bottom: 32px;
+        }
+
+        .contact-item h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--color-oregon-green);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .contact-item p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .contact-item a {
+            color: var(--color-oregon-green);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: var(--color-duck-yellow);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 50px 40px;
+            border: 2px solid rgba(21, 71, 51, 0.3);
+        }
+
+        .contact-form h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--color-duck-yellow);
+            margin-bottom: 32px;
+            text-transform: uppercase;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 16px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            border: 2px solid rgba(21, 71, 51, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--color-cream);
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-oregon-green);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background-color: var(--color-duck-yellow);
+            color: var(--color-text-dark);
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            padding: 18px 48px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 20px rgba(254, 225, 35, 0.4);
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(254, 225, 35, 0.6);
+            background-color: var(--color-cream);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .map-section h3 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-duck-yellow);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 80px 0 40px;
+            background: #000;
+            border-top: 1px solid rgba(254, 225, 35, 0.2);
+            margin-top: 100px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-duck-yellow);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .footer p, .footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--color-duck-yellow);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="container nav-bar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <div class="logo-square"></div>
+                SUZANNE Z KAYKAS
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display-xl">
+                <span style="color: var(--color-cream);">LET'S</span><br>
+                <span style="color: var(--color-duck-yellow);">CONNECT</span>
+            </h1>
+            <p class="page-subtitle">
+                Ready to start your real estate journey? Reach out today and let's discuss your goals.
+            </p>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="container">
+        <div class="contact-grid">
+            <!-- Contact Info -->
+            <div>
+                <div class="contact-info-box">
+                    <h3>Get In Touch</h3>
+
+                    <div class="contact-item">
+                        <h4>Phone</h4>
+                        <p><a href="tel:+15414841234">(541) 484-1234</a></p>
+                        <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 8px;">Available Monday - Saturday, 9am - 6pm</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>Email</h4>
+                        <p><a href="mailto:suzanne@suzannezk.com">suzanne@suzannezk.com</a></p>
+                        <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 8px;">Typically responds within 24 hours</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>Office</h4>
+                        <p>Suzanne Z Kaykas-Canterbury Real Estate LLC</p>
+                        <p>Eugene, Oregon 97401</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>Service Areas</h4>
+                        <p>Eugene • Springfield • Veneta<br>
+                        Junction City • Florence • Fern Ridge<br>
+                        Cottage Grove • Willamette Valley</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding: 30px; background: rgba(21, 71, 51, 0.2); border-left: 4px solid var(--color-duck-yellow);">
+                    <p style="font-family: var(--font-serif); font-size: 1.2rem; font-style: italic;">
+                        "I look forward to working with you and helping you achieve your real estate goals!"
+                    </p>
+                    <p style="margin-top: 16px; font-weight: 600;">— Suzanne Z Kaykas</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div>
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interest">I'm Interested In *</label>
+                            <select id="interest" name="interest" required>
+                                <option value="">Select an option...</option>
+                                <option value="buying">Buying a Home</option>
+                                <option value="selling">Selling a Property</option>
+                                <option value="investment">Investment Properties</option>
+                                <option value="commercial">Commercial Real Estate</option>
+                                <option value="consultation">General Consultation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" required placeholder="Tell me about your real estate needs..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section container">
+        <h3>Serving Eugene & The Willamette Valley</h3>
+        <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">
+            30+ years of local expertise in Oregon real estate
+        </p>
+
+        <div style="background: rgba(21, 71, 51, 0.2); padding: 60px; border: 2px solid rgba(21, 71, 51, 0.3);">
+            <p style="font-size: 1.3rem;">
+                Proudly serving Eugene, Springfield, Veneta, Junction City, Florence, and the entire Willamette Valley region with professional real estate services.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Suzanne Z Kaykas</h3>
+                    <p>Principal Broker / Owner</p>
+                    <p>Licensed in the State of Oregon</p>
+                    <p style="margin-top: 20px;">Suzanne Z Kaykas-Canterbury Real Estate LLC</p>
+                </div>
+
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.oregon.gov/rea/licensing/Documents/Initial-Agency-Disclosure-Pamphlet.pdf" target="_blank">Initial Agency Disclosure</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="#">Community Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 Suzanne Z Kaykas-Canterbury Real Estate LLC. Licensed Oregon Broker. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

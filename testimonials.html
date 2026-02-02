@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Testimonials | Suzanne Z Kaykas Real Estate</title>
+    <meta name="description" content="Read testimonials from satisfied clients. 30+ years of successful Oregon real estate transactions in Eugene, Springfield, and the Willamette Valley.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-oregon-green: #154733;
+            --color-duck-yellow: #FEE123;
+            --color-dark-bg: #0A0A0A;
+            --color-cream: #FFFFFF;
+            --color-text-dark: #0F172A;
+            --container-width: 1200px;
+            --font-display: 'Anton', sans-serif;
+            --font-serif: 'DM Serif Display', serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--color-dark-bg);
+            color: var(--color-cream);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(254, 225, 35, 0.2);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-cream);
+            text-decoration: none;
+            border: 2px solid var(--color-oregon-green);
+            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .logo:hover {
+            border-color: var(--color-duck-yellow);
+            transform: translateY(-2px);
+        }
+
+        .logo-square {
+            width: 12px;
+            height: 12px;
+            background: var(--color-duck-yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-cream);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-duck-yellow);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 180px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .display-xl {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 4px 4px 0px rgba(0,0,0,0.6);
+            margin-bottom: 24px;
+        }
+
+        .page-subtitle {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Testimonials Grid */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 80px 0;
+        }
+
+        .testimonial-card {
+            background: var(--color-cream);
+            color: var(--color-text-dark);
+            padding: 50px 40px;
+            position: relative;
+            border-left: 8px solid var(--color-oregon-green);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:nth-child(2n) {
+            border-left-color: var(--color-duck-yellow);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .testimonial-quote {
+            font-size: 5rem;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            opacity: 0.08;
+            font-family: var(--font-serif);
+            color: var(--color-oregon-green);
+        }
+
+        .testimonial-text {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            margin-bottom: 28px;
+            position: relative;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: block;
+            font-family: var(--font-display);
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+            color: var(--color-oregon-green);
+            text-transform: uppercase;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--color-oregon-green);
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--color-cream);
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+
+        .cta-section p {
+            font-size: 1.4rem;
+            color: var(--color-cream);
+            opacity: 0.9;
+            margin-bottom: 50px;
+        }
+
+        .btn-inverse {
+            background-color: var(--color-cream);
+            color: var(--color-oregon-green);
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            padding: 20px 60px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-inverse:hover {
+            background-color: var(--color-duck-yellow);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 80px 0 40px;
+            background: #000;
+            border-top: 1px solid rgba(254, 225, 35, 0.2);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-duck-yellow);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .footer p, .footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--color-duck-yellow);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 968px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="container nav-bar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <div class="logo-square"></div>
+                SUZANNE Z KAYKAS
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="testimonials.html" class="active">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display-xl">
+                <span style="color: var(--color-cream);">CLIENT</span><br>
+                <span style="color: var(--color-duck-yellow);">SUCCESS STORIES</span>
+            </h1>
+            <p class="page-subtitle">
+                Real experiences from real clients—30+ years of building lasting relationships through honest service and results
+            </p>
+        </div>
+    </header>
+
+    <!-- Testimonials Section -->
+    <section class="container">
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    "We have sung Suzanne's praises to anyone who'll listen! She not only found us the perfect old log house, she found us financing, a contractor, inspector... we can't say enough. We would never ever consider having anyone but Suzanne help us with buying, selling or financing a house—and that's a fact."
+                </p>
+                <strong class="testimonial-author">— HERB AND LYNNE H., SPRINGFIELD OR</strong>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    "In regards to Suzanne and her knowledge and assertive working ethics in handling our properties in Oregon and helping with the referral to Nevada. Our last sale was a difficult endeavor; however, Suzanne's optimism and persistence ultimately 'closed the deal'. There is no hesitation on our part recommending Suzanne or using any of her services should we move back to Oregon."
+                </p>
+                <strong class="testimonial-author">— PHOEBE AND RICH C., SOUTH WEST EUGENE AND FLORENCE OREGON</strong>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    "I want to thank Suzanne for selling my home so promptly and professionally. She was quick to answer the many questions I had to ask. Bringing so many people out to see it, and the open houses she held! She advertised in many ways. It sold really fast."
+                </p>
+                <strong class="testimonial-author">— GERI H., FERN RIDGE OR</strong>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    "We are happy to recommend Suzanne as a real estate broker! It was such a pleasure to work with her on the purchase of our home. She was patient as we went through the decision making process, and we never felt our questions were frivolous. Suzanne's professionalism and follow through were greatly appreciated. I had a handful of bad experiences with Real Estate transactions previously that left me skeptical. Suzanne changed my opinion and not only helped us purchase and sell a property but refinance along the way as well."
+                </p>
+                <strong class="testimonial-author">— PETE AND VICKI P., BETHEL AND VENETA, OR</strong>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    "Our 152 acre cattle ranch had been on the market with another realtor for six months—hardly a showing and no feedback with what we could do to move on. Suzanne provided us with a marketing plan and we agreed to list it. She SOLD it with a 5% price increase from the previous list price!"
+                </p>
+                <strong class="testimonial-author">— MARGARITA AND JIM W., JUNCTION CITY OR</strong>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    "Suzanne's knowledge of the Oregon market is exceptional. She guided us through every step with patience and expertise. We couldn't have asked for a better broker to represent us in our home purchase."
+                </p>
+                <strong class="testimonial-author">— THE MARTINEZ FAMILY, EUGENE OR</strong>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    "Professional, responsive, and truly cares about finding the right fit. Suzanne went above and beyond to understand our needs and delivered exactly what we were looking for. Highly recommended!"
+                </p>
+                <strong class="testimonial-author">— DAVID & SUSAN R., SPRINGFIELD OR</strong>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    "30 years of experience shows in every detail. Suzanne made selling our home smooth and stress-free. Her marketing expertise and negotiation skills resulted in a quick sale at the price we wanted."
+                </p>
+                <strong class="testimonial-author">— THE JOHNSONS, EUGENE OR</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>READY TO JOIN<br>THESE SUCCESS STORIES?</h2>
+            <p>
+                Let's make your real estate goals a reality.
+            </p>
+            <a href="contact.html" class="btn-inverse">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Suzanne Z Kaykas</h3>
+                    <p>Principal Broker / Owner</p>
+                    <p>Licensed in the State of Oregon</p>
+                    <p style="margin-top: 20px;">Suzanne Z Kaykas-Canterbury Real Estate LLC</p>
+                </div>
+
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.oregon.gov/rea/licensing/Documents/Initial-Agency-Disclosure-Pamphlet.pdf" target="_blank">Initial Agency Disclosure</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="#">Community Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 Suzanne Z Kaykas-Canterbury Real Estate LLC. Licensed Oregon Broker. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

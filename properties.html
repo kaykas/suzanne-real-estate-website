@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties | Suzanne Z Kaykas Real Estate</title>
+    <meta name="description" content="Browse residential, commercial, and investment properties in Eugene, Springfield, and the Willamette Valley. Expert real estate guidance from Suzanne Z Kaykas.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-oregon-green: #154733;
+            --color-duck-yellow: #FEE123;
+            --color-dark-bg: #0A0A0A;
+            --color-cream: #FFFFFF;
+            --color-text-dark: #0F172A;
+            --container-width: 1200px;
+            --font-display: 'Anton', sans-serif;
+            --font-serif: 'DM Serif Display', serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--color-dark-bg);
+            color: var(--color-cream);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(254, 225, 35, 0.2);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-cream);
+            text-decoration: none;
+            border: 2px solid var(--color-oregon-green);
+            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .logo:hover {
+            border-color: var(--color-duck-yellow);
+            transform: translateY(-2px);
+        }
+
+        .logo-square {
+            width: 12px;
+            height: 12px;
+            background: var(--color-duck-yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-cream);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-duck-yellow);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 180px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .display-xl {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 4px 4px 0px rgba(0,0,0,0.6);
+            margin-bottom: 24px;
+        }
+
+        .page-subtitle {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        /* Search Box */
+        .search-box {
+            background: var(--color-cream);
+            padding: 50px;
+            box-shadow: 15px 15px 0px var(--color-oregon-green);
+            border-left: 8px solid var(--color-duck-yellow);
+            margin: 60px auto;
+            max-width: 900px;
+        }
+
+        .search-box h3 {
+            font-family: var(--font-display);
+            color: var(--color-oregon-green);
+            font-size: 2rem;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .search-form {
+            display: flex;
+            gap: 16px;
+        }
+
+        .search-form input {
+            flex: 1;
+            padding: 16px;
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            border: 2px solid var(--color-oregon-green);
+            background: white;
+            color: var(--color-text-dark);
+        }
+
+        .search-form button {
+            background-color: var(--color-duck-yellow);
+            color: var(--color-text-dark);
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            padding: 16px 40px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .search-form button:hover {
+            background-color: var(--color-oregon-green);
+            color: var(--color-cream);
+        }
+
+        /* Property Grid */
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 80px 0;
+        }
+
+        .property-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(21, 71, 51, 0.3);
+            transition: all 0.3s;
+            overflow: hidden;
+        }
+
+        .property-card:hover {
+            border-color: var(--color-oregon-green);
+            transform: translateY(-10px);
+        }
+
+        .property-image {
+            width: 100%;
+            height: 250px;
+            background: #333;
+            object-fit: cover;
+        }
+
+        .property-content {
+            padding: 30px;
+        }
+
+        .property-status {
+            display: inline-block;
+            background: var(--color-duck-yellow);
+            color: var(--color-text-dark);
+            padding: 6px 16px;
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .property-status.sold {
+            background: var(--color-oregon-green);
+            color: var(--color-cream);
+        }
+
+        .property-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-cream);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .property-type {
+            color: var(--color-duck-yellow);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .property-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+
+        .btn-primary {
+            background-color: var(--color-duck-yellow);
+            color: var(--color-text-dark);
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            padding: 14px 36px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-cream);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--color-oregon-green);
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--color-cream);
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+
+        .cta-section p {
+            font-size: 1.4rem;
+            color: var(--color-cream);
+            opacity: 0.9;
+            margin-bottom: 50px;
+        }
+
+        .btn-inverse {
+            background-color: var(--color-cream);
+            color: var(--color-oregon-green);
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            padding: 20px 60px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-inverse:hover {
+            background-color: var(--color-duck-yellow);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 80px 0 40px;
+            background: #000;
+            border-top: 1px solid rgba(254, 225, 35, 0.2);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-duck-yellow);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .footer p, .footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--color-duck-yellow);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 968px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .search-form {
+                flex-direction: column;
+            }
+
+            .properties-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="container nav-bar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <div class="logo-square"></div>
+                SUZANNE Z KAYKAS
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="properties.html" class="active">Properties</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display-xl">
+                <span style="color: var(--color-cream);">FIND YOUR</span><br>
+                <span style="color: var(--color-duck-yellow);">PERFECT PROPERTY</span>
+            </h1>
+            <p class="page-subtitle">
+                Residential, commercial, and investment properties throughout Eugene, Springfield, and the Willamette Valley
+            </p>
+        </div>
+    </header>
+
+    <!-- Search Box -->
+    <div class="container">
+        <div class="search-box">
+            <h3>Search Properties on Realtor.com</h3>
+            <form class="search-form" action="https://realtor.com" target="_blank" method="get">
+                <input type="text" name="q" placeholder="City, zip, neighborhood, or school district..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Featured Properties -->
+    <section class="container">
+        <h2 style="font-family: var(--font-display); font-size: 3rem; text-align: center; margin-bottom: 60px; color: var(--color-duck-yellow); text-transform: uppercase;">
+            Featured Listings
+        </h2>
+
+        <div class="properties-grid">
+            <!-- Property 1 -->
+            <div class="property-card">
+                <img src="wp-content/uploads/2018/08/condo-1-375x200.jpeg" alt="1375 OLIVE ST" class="property-image">
+                <div class="property-content">
+                    <span class="property-status sold">Sold</span>
+                    <h3>1375 OLIVE ST</h3>
+                    <p class="property-type">Residential</p>
+                    <p>Beautiful residential property in a prime Eugene location. Recently sold through professional marketing and expert negotiation.</p>
+                    <a href="#contact" class="btn-primary">Inquire About Similar Properties</a>
+                </div>
+            </div>
+
+            <!-- Property 2 -->
+            <div class="property-card">
+                <img src="wp-content/uploads/2018/06/10000701-41-375x200.jpg" alt="Outstanding Custom in South Hills" class="property-image">
+                <div class="property-content">
+                    <span class="property-status sold">Sold</span>
+                    <h3>CUSTOM SOUTH HILLS HOME</h3>
+                    <p class="property-type">Residential</p>
+                    <p>Outstanding custom-built home in the prestigious South Hills area. Exceptional craftsmanship and stunning views.</p>
+                    <a href="#contact" class="btn-primary">View Similar Listings</a>
+                </div>
+            </div>
+
+            <!-- Property 3 -->
+            <div class="property-card">
+                <img src="wp-content/uploads/2018/06/front-close-up-1280x9601-375x200.jpg" alt="Commercial Building SE Eugene" class="property-image">
+                <div class="property-content">
+                    <span class="property-status sold">Sold</span>
+                    <h3>SE EUGENE COMMERCIAL</h3>
+                    <p class="property-type">Commercial</p>
+                    <p>Free-standing commercial building in high-traffic Southeast Eugene location. Perfect for businesses seeking visibility.</p>
+                    <a href="#contact" class="btn-primary">Explore Commercial Options</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="container" style="padding: 80px 0;">
+        <h2 style="font-family: var(--font-display); font-size: 3rem; text-align: center; margin-bottom: 60px; color: var(--color-duck-yellow); text-transform: uppercase;">
+            Service Areas
+        </h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+            <div style="background: rgba(21, 71, 51, 0.2); padding: 40px; text-align: center; border-left: 4px solid var(--color-duck-yellow);">
+                <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: var(--color-cream); margin-bottom: 16px;">EUGENE</h3>
+                <p>Downtown, South Hills, West Eugene, River Road, Santa Clara</p>
+            </div>
+
+            <div style="background: rgba(21, 71, 51, 0.2); padding: 40px; text-align: center; border-left: 4px solid var(--color-duck-yellow);">
+                <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: var(--color-cream); margin-bottom: 16px;">SPRINGFIELD</h3>
+                <p>Downtown Springfield, Thurston, Gateway, Glenwood</p>
+            </div>
+
+            <div style="background: rgba(21, 71, 51, 0.2); padding: 40px; text-align: center; border-left: 4px solid var(--color-duck-yellow);">
+                <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: var(--color-cream); margin-bottom: 16px;">WILLAMETTE VALLEY</h3>
+                <p>Veneta, Junction City, Fern Ridge, Florence, Cottage Grove</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>READY TO FIND<br>YOUR HOME?</h2>
+            <p>
+                Let's discuss your property goals and find the perfect match.
+            </p>
+            <a href="contact.html" class="btn-inverse">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Suzanne Z Kaykas</h3>
+                    <p>Principal Broker / Owner</p>
+                    <p>Licensed in the State of Oregon</p>
+                    <p style="margin-top: 20px;">Suzanne Z Kaykas-Canterbury Real Estate LLC</p>
+                </div>
+
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.oregon.gov/rea/licensing/Documents/Initial-Agency-Disclosure-Pamphlet.pdf" target="_blank">Initial Agency Disclosure</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="#">Community Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 Suzanne Z Kaykas-Canterbury Real Estate LLC. Licensed Oregon Broker. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
