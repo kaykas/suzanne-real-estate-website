@@ -252,7 +252,14 @@
         .floating-deco {
             position: absolute;
             pointer-events: none;
-            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-deco:nth-of-type(1) {
+            animation: orbit1 6s ease-in-out infinite;
+        }
+
+        .floating-deco:nth-of-type(2) {
+            animation: orbit2 6s ease-in-out infinite;
         }
 
         .deco-diamond {
@@ -262,9 +269,20 @@
             transform: rotate(45deg);
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(45deg); }
-            50% { transform: translateY(-20px) rotate(50deg); }
+        @keyframes orbit1 {
+            0% { transform: translate(0, 0) rotate(45deg); }
+            25% { transform: translate(30px, -25px) rotate(50deg); }
+            50% { transform: translate(50px, -10px) rotate(55deg); }
+            75% { transform: translate(30px, 15px) rotate(50deg); }
+            100% { transform: translate(0, 0) rotate(45deg); }
+        }
+
+        @keyframes orbit2 {
+            0% { transform: translate(0, 0) rotate(45deg); }
+            25% { transform: translate(-35px, -20px) rotate(50deg); }
+            50% { transform: translate(-50px, 10px) rotate(55deg); }
+            75% { transform: translate(-25px, 25px) rotate(50deg); }
+            100% { transform: translate(0, 0) rotate(45deg); }
         }
 
         /* Experience Section */
@@ -718,7 +736,7 @@
                 <div class="floating-deco" style="top: -30px; left: 50px;">
                     <div class="deco-diamond"></div>
                 </div>
-                <div class="floating-deco" style="bottom: 60px; right: -20px; animation-delay: 1.5s;">
+                <div class="floating-deco" style="bottom: 60px; right: -20px;">
                     <div class="deco-diamond" style="width: 40px; height: 40px;"></div>
                 </div>
             </div>
