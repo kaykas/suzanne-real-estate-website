@@ -13,8 +13,9 @@
     <style>
         :root {
             /* Oregon Ducks Colors */
-            --color-oregon-green: #154733;
-            --color-duck-yellow: #FEE123;
+            --color-navy-blue: #0A2540;      /* Dark navy - primary brand */
+            --color-royal-blue: #4169B1;     /* Royal blue - secondary */
+            --color-sky-blue: #A8D5F2;        /* Sky blue - light accent */
             --color-dark-bg: #0A0A0A;
             --color-cream: #FFFFFF;
             --color-text-dark: #0F172A;
@@ -77,7 +78,7 @@
             font-size: 1.5rem;
             color: var(--color-cream);
             text-decoration: none;
-            border: 2px solid var(--color-oregon-green);
+            border: 2px solid var(--color-navy-blue);
             padding: 8px 16px;
             display: inline-flex;
             align-items: center;
@@ -86,14 +87,14 @@
         }
 
         .logo:hover {
-            border-color: var(--color-duck-yellow);
+            border-color: var(--color-royal-blue);
             transform: translateY(-2px);
         }
 
         .logo-square {
             width: 12px;
             height: 12px;
-            background: var(--color-duck-yellow);
+            background: var(--color-royal-blue);
         }
 
         .company-tagline {
@@ -125,7 +126,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--color-duck-yellow);
+            color: var(--color-royal-blue);
         }
 
         /* Hero Section */
@@ -144,7 +145,7 @@
             right: -15%;
             width: 80vw;
             height: 120vh;
-            background: var(--color-oregon-green);
+            background: var(--color-navy-blue);
             opacity: 0.15;
             border-radius: 0% 100% 0% 100% / 0% 100% 0% 100%;
             z-index: 0;
@@ -170,7 +171,7 @@
         }
 
         .hero-highlight {
-            color: var(--color-duck-yellow);
+            color: var(--color-royal-blue);
         }
 
         .hero-sub {
@@ -183,7 +184,7 @@
         }
 
         .btn-primary {
-            background-color: var(--color-duck-yellow);
+            background-color: var(--color-royal-blue);
             color: var(--color-text-dark);
             font-family: var(--font-display);
             font-size: 1.25rem;
@@ -210,7 +211,7 @@
             font-family: var(--font-display);
             font-size: 1.1rem;
             padding: 14px 36px;
-            border: 2px solid var(--color-oregon-green);
+            border: 2px solid var(--color-navy-blue);
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -220,8 +221,8 @@
         }
 
         .btn-secondary:hover {
-            background: var(--color-oregon-green);
-            border-color: var(--color-oregon-green);
+            background: var(--color-navy-blue);
+            border-color: var(--color-navy-blue);
         }
 
         .hero-cta-group {
@@ -245,10 +246,10 @@
             height: 100%;
             border-radius: 50%;
             overflow: hidden;
-            border: 12px solid var(--color-oregon-green);
+            border: 12px solid var(--color-navy-blue);
             box-shadow:
                 20px 20px 60px rgba(0,0,0,0.7),
-                0 0 0 2px var(--color-duck-yellow);
+                0 0 0 2px var(--color-royal-blue);
             position: relative;
             background: #222;
         }
@@ -276,7 +277,7 @@
         .deco-diamond {
             width: 60px;
             height: 60px;
-            background: var(--color-duck-yellow);
+            background: var(--color-royal-blue);
             transform: rotate(45deg);
         }
 
@@ -329,19 +330,19 @@
         .stat-box {
             background: var(--color-cream);
             padding: 50px 40px;
-            box-shadow: 15px 15px 0px var(--color-oregon-green);
+            box-shadow: 15px 15px 0px var(--color-navy-blue);
             transition: all 0.3s;
-            border-left: 8px solid var(--color-duck-yellow);
+            border-left: 8px solid var(--color-royal-blue);
         }
 
         .stat-box:hover {
             transform: translate(-5px, -5px);
-            box-shadow: 20px 20px 0px var(--color-oregon-green);
+            box-shadow: 20px 20px 0px var(--color-navy-blue);
         }
 
         .stat-box h3 {
             font-family: var(--font-display);
-            color: var(--color-oregon-green);
+            color: var(--color-navy-blue);
             font-size: 4rem;
             margin-bottom: 12px;
             line-height: 1;
@@ -374,8 +375,8 @@
 
         .badge {
             display: inline-block;
-            background: var(--color-oregon-green);
-            color: var(--color-duck-yellow);
+            background: var(--color-navy-blue);
+            color: var(--color-royal-blue);
             padding: 10px 28px;
             margin-bottom: 24px;
             font-weight: bold;
@@ -407,14 +408,14 @@
             left: 0;
             width: 100%;
             height: 6px;
-            background: var(--color-duck-yellow);
+            background: var(--color-royal-blue);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.3s;
         }
 
         .service-card:hover {
-            border-color: var(--color-oregon-green);
+            border-color: var(--color-navy-blue);
             background: rgba(21, 71, 51, 0.1);
         }
 
@@ -425,7 +426,7 @@
         .service-card h3 {
             font-family: var(--font-display);
             font-size: 1.8rem;
-            color: var(--color-duck-yellow);
+            color: var(--color-royal-blue);
             margin-bottom: 20px;
             text-transform: uppercase;
         }
@@ -466,17 +467,17 @@
             color: var(--color-text-dark);
             padding: 50px 40px;
             position: relative;
-            border-left: 8px solid var(--color-oregon-green);
+            border-left: 8px solid var(--color-navy-blue);
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
             transition: transform 0.3s;
         }
 
         .testimonial-card:nth-child(2) {
-            border-left-color: var(--color-duck-yellow);
+            border-left-color: var(--color-royal-blue);
         }
 
         .testimonial-card:nth-child(3) {
-            border-left-color: var(--color-oregon-green);
+            border-left-color: var(--color-navy-blue);
         }
 
         .testimonial-card:hover {
@@ -490,7 +491,7 @@
             left: 30px;
             opacity: 0.08;
             font-family: var(--font-serif);
-            color: var(--color-oregon-green);
+            color: var(--color-navy-blue);
         }
 
         .testimonial-text {
@@ -507,14 +508,14 @@
             font-family: var(--font-display);
             letter-spacing: 1px;
             font-size: 0.95rem;
-            color: var(--color-oregon-green);
+            color: var(--color-navy-blue);
             text-transform: uppercase;
         }
 
         /* Call-to-Action Section */
         .cta-section {
             padding: 100px 0;
-            background: var(--color-oregon-green);
+            background: var(--color-navy-blue);
             position: relative;
             overflow: hidden;
         }
@@ -557,7 +558,7 @@
 
         .btn-inverse {
             background-color: var(--color-cream);
-            color: var(--color-oregon-green);
+            color: var(--color-navy-blue);
             font-family: var(--font-display);
             font-size: 1.4rem;
             padding: 20px 60px;
@@ -574,7 +575,7 @@
         .btn-inverse:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-            background-color: var(--color-duck-yellow);
+            background-color: var(--color-royal-blue);
         }
 
         /* Footer */
@@ -594,7 +595,7 @@
         .footer h3 {
             font-family: var(--font-display);
             font-size: 1.5rem;
-            color: var(--color-duck-yellow);
+            color: var(--color-royal-blue);
             margin-bottom: 24px;
             text-transform: uppercase;
         }
@@ -608,7 +609,7 @@
         }
 
         .footer a:hover {
-            color: var(--color-duck-yellow);
+            color: var(--color-royal-blue);
         }
 
         .footer-links {
@@ -765,7 +766,7 @@
                 <div>
                     <h2 class="display-lg">
                         30+ YEARS<br>
-                        <span style="color: var(--color-duck-yellow);">OF LOCAL EXPERTISE</span>
+                        <span style="color: var(--color-royal-blue);">OF LOCAL EXPERTISE</span>
                     </h2>
                     <p class="serif-subtitle">
                         "I love this beautiful area and the people in it. I look forward to working with you!"
@@ -800,13 +801,13 @@
                 <div class="badge">What I Offer</div>
                 <h2 class="display-lg" style="color: var(--color-cream);">
                     COMPREHENSIVE<br>
-                    <span style="color: var(--color-duck-yellow);">REAL ESTATE SERVICES</span>
+                    <span style="color: var(--color-royal-blue);">REAL ESTATE SERVICES</span>
                 </h2>
             </div>
 
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Residential</h3>
+                    <h3>Properties</h3>
                     <p>
                         From first-time homebuyers to seasoned investors, I guide you through every step of finding your perfect home in Eugene and surrounding areas.
                     </p>
@@ -857,7 +858,7 @@
                 <div class="badge">Client Success Stories</div>
                 <h2 class="display-lg">
                     TRUSTED<br>
-                    <span style="color: var(--color-duck-yellow);">RELATIONSHIPS</span>
+                    <span style="color: var(--color-royal-blue);">RELATIONSHIPS</span>
                 </h2>
                 <p class="serif-subtitle" style="max-width: 600px; margin: 20px auto 0; text-align: center;">
                     Building lasting connections through honest service and local expertise
