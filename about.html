@@ -43,6 +43,7 @@
             z-index: 2;
         }
 
+        
         /* Navigation */
         .nav-bar {
             position: fixed;
@@ -50,76 +51,108 @@
             left: 0;
             width: 100%;
             z-index: 100;
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(10, 10, 10, 0.98);
             backdrop-filter: blur(10px);
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(254, 225, 35, 0.2);
+            border-bottom: 1px solid rgba(65, 105, 177, 0.3);
         }
 
         .nav-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
             gap: 20px;
         }
 
         .logo {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            color: var(--color-cream);
-            text-decoration: none;
-            border: 2px solid var(--color-navy-blue);
-            padding: 8px 16px;
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
+            gap: 15px;
+            text-decoration: none;
+            transition: opacity 0.3s;
         }
 
         .logo:hover {
-            border-color: var(--color-royal-blue);
-            transform: translateY(-2px);
+            opacity: 0.8;
         }
 
         .logo-image {
-            height: 50px;
+            height: 60px;
             width: auto;
             display: block;
         }
 
-        .logo-text {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            letter-spacing: 1px;
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
         }
 
-        .logo-square {
-            width: 12px;
-            height: 12px;
-            background: var(--color-royal-blue);
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            color: var(--color-cream);
+            line-height: 1;
+        }
+
+        .firm-credentials {
+            line-height: 1.2;
+        }
+
+        .firm-name {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--color-cream);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .broker-designation {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            color: var(--color-sky-blue);
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .company-tagline {
+            display: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 35px;
             list-style: none;
             align-items: center;
+            margin: 0;
+            padding: 0;
         }
 
         .nav-links a {
             color: var(--color-cream);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: all 0.3s;
             text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
         }
 
         .nav-links a:hover,
         .nav-links a.active {
             color: var(--color-royal-blue);
+            border-bottom-color: var(--color-royal-blue);
         }
 
         /* Page Header */
@@ -367,19 +400,20 @@
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="container nav-bar">
+        <!-- Navigation -->
+    <nav class="nav-bar">
         <div class="nav-content">
-            <div>
+            <div class="logo-section">
                 <a href="index.html" class="logo">
                     <img src="wp-content/uploads/2018/06/logo-new.jpg" alt="Suzanne Z Kaykas Real Estate" class="logo-image">
-                    <span class="logo-text">SUZANNE Z KAYKAS</span>
+                    <div class="logo-text-group">
+                        <span class="logo-text">SUZANNE Z KAYKAS</span>
+                        <div class="firm-credentials">
+                            <div class="firm-name">Suzanne Z Kaykas Real Estate LLC</div>
+                            <div class="broker-designation">Principal Broker / Owner | Licensed in Oregon</div>
+                        </div>
+                    </div>
                 </a>
-                <div class="firm-credentials">
-                    <p class="firm-name">Suzanne Z Kaykas Real Estate LLC</p>
-                    <p class="broker-designation">Principal Broker / Owner | Licensed in the State of Oregon</p>
-                </div>
-                <p class="company-tagline">"It is not the company you keep but the Broker you hire for a successful Real Estate transaction"</p>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
