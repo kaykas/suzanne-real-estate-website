@@ -183,7 +183,18 @@
             background-image: url('wp-content/uploads/2018/06/eugene-aerial.jpg');
             background-size: cover;
             background-position: center;
-            opacity: 0.12;
+            opacity: 0.35;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.7) 0%, rgba(10, 10, 10, 0.6) 100%);
             z-index: 0;
         }
 
@@ -799,11 +810,11 @@
         <div class="container hero-grid">
             <div class="hero-text-block">
                 <h1 class="display-xl">
-                    <span>YOUR HOME</span>
-                    <span class="hero-highlight">YOUR FUTURE</span>
+                    <span>YOUR PROPERTY</span>
+                    <span class="hero-highlight">YOUR SUCCESS</span>
                 </h1>
                 <p class="hero-sub">
-                    Professional real estate services since 1991. Helping Oregon families find their perfect property—not just a broker, but your trusted partner throughout Oregon including Eugene, Springfield, Portland, Salem, the Coast, and multiple valleys and counties.
+                    Professional and customized service for residential, commercial, and investment properties. Serving the Willamette Valley including Eugene and Springfield, with specialty areas throughout Oregon. Assisting multi-generational clients since 1991 to find properties that meet their goals.
                 </p>
                 <div class="hero-cta-group">
                     <a href="properties.html" class="btn-primary">View Properties</a>
@@ -876,7 +887,7 @@
                 <div class="service-card">
                     <h3>Properties</h3>
                     <p>
-                        From first-time homebuyers to seasoned investors, I guide you through every step of finding your perfect home in Eugene and surrounding areas.
+                        Residential, commercial, and investment properties throughout the Willamette Valley including Eugene and Springfield, with specialty areas across Oregon. Multi-generational service since 1991.
                     </p>
                 </div>
 
@@ -967,10 +978,10 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container cta-content">
-            <h2>READY TO FIND YOUR<br>PERFECT HOME?</h2>
+            <h2>READY TO FIND YOUR<br>PERFECT PROPERTY?</h2>
             <p>
                 Let's work together to make your real estate goals a reality.<br>
-                30+ years of experience, local expertise, and dedication to your success.
+                40+ years of business innovation expertise. 30+ years in real estate. Building partnerships and lifelong friendships through solution-based service.
             </p>
             <a href="contact.html" class="btn-inverse">Get Started Today</a>
         </div>
