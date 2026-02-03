@@ -172,6 +172,20 @@
             padding-bottom: 80px;
         }
 
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('wp-content/uploads/2018/06/eugene-aerial.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.12;
+            z-index: 0;
+        }
+
         .hero-blob {
             position: absolute;
             top: -10%;
@@ -661,6 +675,20 @@
             font-size: 0.9rem;
         }
 
+        .realtor-badge {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .realtor-badge img {
+            height: 40px;
+            width: auto;
+            opacity: 0.7;
+        }
+
         .footer-logos {
             display: flex;
             gap: 30px;
@@ -742,7 +770,7 @@
         <div class="nav-content">
             <div>
                 <a href="index.html" class="logo">
-                    <img src="wp-content/uploads/2018/06/logo.jpg" alt="Suzanne Z Kaykas Real Estate" class="logo-image">
+                    <img src="wp-content/uploads/2018/06/logo-new.jpg" alt="Suzanne Z Kaykas Real Estate" class="logo-image">
                     <span class="logo-text">SUZANNE Z KAYKAS</span>
                 </a>
                 <div class="firm-credentials">
@@ -986,6 +1014,9 @@
 
             <div class="footer-bottom">
                 <p>© 2024 Suzanne Z Kaykas Real Estate LLC. Licensed Oregon Broker. All rights reserved.</p>
+                <div class="realtor-badge">
+                    <img src="wp-content/uploads/2018/06/realtor-logo.png" alt="REALTOR®">
+                </div>
                 <p style="margin-top: 10px;">"It is not the company you keep but the Broker you hire for a successful Real Estate transaction"</p>
             </div>
         </div>
